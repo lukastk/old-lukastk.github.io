@@ -51,7 +51,7 @@
   The government organisation DAAD funded my internship in the *Nonlinear Dynamics and Control* group, led by Dr. Philipp Hövel, at TU Berlin. The research was in the field of network theory, applied specifically to epidemics, working on various datasets provided by the German government.
 
   - Collaborated within a team of three to produce an analysis of the dynamics of the German cattle-trade network, to explore avenues of disease spread prevention.
-  - Wrote fast and efficient programs in C++ to simulate epidemic dynamics on large-scale networks. Repository <a target="_blank" href="https://github.com/lukastk/epidemic_simulator"></a>.
+  - Wrote fast and efficient programs in C++ to simulate epidemic dynamics on large-scale networks. Find the repository <a target="_blank" href="https://github.com/lukastk/epidemic_simulator">here</a>.
   - Created visualisations of the dynamics of the epidemics of complex networks using d3.js and graph_tool.
 
 
