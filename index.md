@@ -1,9 +1,9 @@
 # Lukas Kikuchi's personal page
 
-<div style="float:right; margin: 10px;">
+<div style="">
 <img  src="./media/me.jpg">
-<p><i>**E-mail:** lukas.kikuchi@gmail.com <br>
-**GitHub:** https://github.com/lukastk/</i></p>
+<p><i><b>E-mail:</b> lukas.kikuchi@gmail.com <br>
+<b>GitHub:</b> https://github.com/lukastk/</i></p>
 </div>
 
 ## Research interests
