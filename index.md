@@ -73,7 +73,7 @@
 
   CAPS is annual student-run event organized in collaboration with the *Institute of Physics*, and is one of the largest of its kind in the UK. As chair I managed a team of fifteen to realize our vision of the conference. My main role was to act as the leader and coordinator between the sponsorship, publicity and project wings of our team, but I also dealt heavily with the logistics and the planning of the conference. Due to the pressures of the role I further developed my time-management skills, as well my leadership abilities. The event was highly successful and received a lot of positive feedback from its attendees.
 
-- **Co-founder of educational charity Go4Code**. June 2016 - ongoing.
+- **Co-founder of educational charity *Go4Code***. June 2016 - ongoing.
 
   Go4Code is a UCL-funded organization that specializes in educational outreach in programming for kids from geographically underprivileged areas. With my partner and a team of student volunteers we run weekly a program in a number of schools in London. We also regularly hold one-day workshops and summer-schools in collaboration with the Widening Participation office at UCL. As a co-founder of Go4Code I've successfully:
   - Designed, wrote and taught an introductory course in Python programming.
