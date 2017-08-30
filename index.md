@@ -1,6 +1,10 @@
 # Lukas Kikuchi's personal page
 
-##### Masters student at the University of Cambridge
+<div style="float:right; margin: 10px;">
+<img  src="./media/me.jpg">
+<p><i>**E-mail:** lukas.kikuchi@gmail.com <br>
+**GitHub:** https://github.com/lukastk/</i></p>
+</div>
 
 ## Research interests
 
