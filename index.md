@@ -24,6 +24,17 @@
 
 ## Relevant experiences
 
+- **Summer internship**, *Seoul National University*. July 2017 - September 2017
+
+  *Simulation of Electron Spin Resonance (ESR) spectroscopy within Nitrogen-Vacancy centers in Diamonds*
+
+  Nitrogen-Vacancy centers possess the unique property of having a triplet ground-state, as well as a simple Triplet-0 initialization procedure. This makes the system highly attractive as a qubit candidate. My work consisted of building simulations in MATLAB and Mathematica of electron spin resonance in the NV-center.
+
+  - Developed a fully-featured and flexible simulation of ESR on the NV-center ground-state.
+  - Made the project open-source and available for public use. You can find it <a target="_blank" href="https://github.com/lukastk/nv-centre-spectrum-simulator">here</a>.
+
+
+<!--
 - **Part-time research assistant**, *University College London*. January 2017 - March 2017
 
   Developer for the ab initio electron scattering simulation software Quantemol-N
@@ -31,7 +42,7 @@
   Currently I work part time as a developer for the UCL-based Quantemol Ltd. My role is to extend the Quantemol-N software, used for ab initio electron-molecule scattering calculations.
   - My role is to enhance the speed and the accuracy of the software by creating interfaces with other quantum chemistry packages like MolPro and Gaussian.
   - Writing object-oriented code in Java.
-  
+-->
 
 - **Summer internship**, *Technische Universität Berlin (TU Berlin)*. June 2016 - September 2016
 
