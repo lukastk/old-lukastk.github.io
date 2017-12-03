@@ -23,7 +23,7 @@
   September 2014 - June 2017. First class degree (1:1), Dean's list (top 5% in the Faculty of Mathematical & Physical Sciences).
 
 ## Relevant experiences
-
+<!--
 - **Summer internship**, *Seoul National University*. July 2017 - September 2017
 
   *Simulation of Electron Spin Resonance (ESR) spectroscopy within Nitrogen-Vacancy centers in Diamonds*
@@ -33,8 +33,8 @@
   - Developed a fully-featured and flexible simulation of ESR on the NV-center ground-state.
   - Made the project open-source and available for public use. You can find it <a target="_blank" href="https://github.com/lukastk/nv-centre-spectrum-simulator">here</a>.
 
+-->
 
-<!--
 - **Part-time research assistant**, *University College London*. January 2017 - March 2017
 
   Developer for the ab initio electron scattering simulation software Quantemol-N
@@ -42,7 +42,7 @@
   Currently I work part time as a developer for the UCL-based Quantemol Ltd. My role is to extend the Quantemol-N software, used for ab initio electron-molecule scattering calculations.
   - My role is to enhance the speed and the accuracy of the software by creating interfaces with other quantum chemistry packages like MolPro and Gaussian.
   - Writing object-oriented code in Java.
--->
+
 
 - **Summer internship**, *Technische Universität Berlin (TU Berlin)*. June 2016 - September 2016
 
