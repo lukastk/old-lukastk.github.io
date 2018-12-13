@@ -18,7 +18,8 @@
 
 ## Experience
 
-  - **Data Analyst at *Bridges for Enterprise*** October 2018 - ongoing
+  - **Data Analyst at *Bridges for Enterprise***. October 2018 - ongoing
+
     Bridges for Enterprise is an international non-profit that focuses on empowering
     social entrepreneurs. I work with BfE to create a web application that can
     automatically match our clients with potential investors, based on a natural
