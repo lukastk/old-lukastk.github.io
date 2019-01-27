@@ -1,0 +1,155 @@
+body {
+  margin: 0px;
+  color: #393F44;
+  background-image: url("./media/backg/stripes-pink1.png");
+  background-repeat: repeat;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+}
+h2 {
+  font-family: 'Nunito', sans-serif;
+}
+
+.header {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color: #FFF;
+  background-image: url("./media/header-image.png");
+  background-size: 100%;
+  background-position-y: bottom;
+}
+
+#titlebox {
+  background-color: #ffe0a4;
+  border-radius: 20px;
+  width: 320px;
+  padding-left: 22px;
+  padding-bottom: 14px;
+  padding-top: 8px;
+}
+#titlebox a {
+  text-decoration: none;
+  color: #373737;
+}
+
+.menu {
+  width: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color: #ffe0a4;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.menu li {
+  float: left;
+}
+
+.menu li a {
+  width: 100%;
+  display: inline-block;
+  color: #373737;
+  font-family: 'Nunito', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menu li a:hover {
+  color: #FFF;
+}
+
+.menu .active {
+  background-color: #fccbc3;
+}
+
+.container {
+  margin-top: 0px;
+}
+
+.content {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 60%;
+  margin-top:30px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 20px;
+}
+
+.sbutton {
+  border: solid #393F44 1px;
+  background-color: #00000000;
+  border-radius: 999px;
+  font-family: 'Avenir Book';
+  font-size: 14px;
+  padding:10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.sbutton:hover {
+  background-color: #393F44;
+  color: #FFF;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+
+.sbutton-slim {
+  border: solid #393F44 1px;
+  background-color: #00000000;
+  border-radius: 999px;
+  font-family: 'Avenir Book';
+  font-size: 14px;
+  padding:5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.sbutton-slim:hover {
+  background-color: #393F44;
+  color: #FFF;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+}
+
+@font-face {
+  font-family: "Avenir Heavy";
+  src: url("./fonts/AvenirLTStd-Heavy.otf");
+}
+
+@font-face {
+  font-family: "Avenir Book";
+  src: url("./fonts/AvenirLTStd-Book.otf");
+}
