@@ -1,0 +1,25 @@
+body {
+    background-color: #000;
+    color: #fff;
+
+    padding-top: 2em;
+    padding-bottom: 3em;
+    font-family: "Courier New";
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
