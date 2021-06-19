@@ -1,3 +1,0 @@
-[submodule "vle"]
-	path = vle
-	url = https://github.com/lukastk/VirtualLabEnvironment.git
