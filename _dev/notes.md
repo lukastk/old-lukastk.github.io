@@ -3,3 +3,5 @@ I used [this](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wi
 To locally run the site:
 
         bundle exec jekyll serve
+
+[Collections](https://jekyllrb.com/docs/collections/)
