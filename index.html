@@ -1,0 +1,47 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+
+  
+<div id="content"></div>
+
+
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.countapi.xyz/hit/lukastk.github.com/visits");
+xhr.responseType = "json";
+xhr.onload = function() {
+    document.getElementById('content').innerText = this.response.value;
+    console.log(this.response.value);
+    console.log(2)
+}
+xhr.send();
+</script>
+
+<script>
+const textFileUrl = 'data/l1.txt'; // Replace with your URL
+
+window.onload = function() {
+    fetch(textFileUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('content').innerHTML = data;
+        })
+        .catch(e => {
+            console.log('There was a problem with your fetch operation: ' + e.message);
+        });
+};
+</script>
+
+</body>
+
+</html>
