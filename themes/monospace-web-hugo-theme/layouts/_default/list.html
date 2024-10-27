@@ -5,15 +5,14 @@
   </div>
 
   {{ .Content }}
-  {{ range .Pages }}
-    <div class="post-item">
-      <a href="{{ .RelPermalink }}" class="post-link">{{ .LinkTitle }}</a>
-      {{ .Date.Format "January 2, 2006" }}
-    </div>
+    {{ range .Pages }}
+      <div class="post-item">
+        <a href="{{ .RelPermalink }}" class="post-link">{{ .LinkTitle }}</a>
+        {{ .Date.Format "January 2, 2006" }}
+      </div>
 
-    <div class="post-summary">
-      {{ .Summary }}
-    </div>
-
+      <div class="post-summary">
+        {{ .Summary }}
+      </div>
+    {{ end }}
   {{ end }}
-{{ end }}
