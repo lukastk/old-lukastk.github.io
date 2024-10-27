@@ -6,7 +6,14 @@
 
   {{ .Content }}
   {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
+    <div class="post-item">
+      <a href="{{ .RelPermalink }}" class="post-link">{{ .LinkTitle }}</a>
+      {{ .Date.Format "January 2, 2006" }}
+    </div>
+
+    <div class="post-summary">
+      {{ .Summary }}
+    </div>
+
   {{ end }}
 {{ end }}

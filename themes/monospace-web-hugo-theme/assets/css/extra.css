@@ -80,6 +80,9 @@ table.posts-table>td {
 .page-meta>div {
     margin-top: 0.5rem;
 }
+.post-summary {
+    margin-bottom: 2rem;
+}
 
 a:hover {
     color: var(--a-hover-color) !important;
