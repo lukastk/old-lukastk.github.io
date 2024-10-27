@@ -1,0 +1,28 @@
+baseURL = 'https://lukastk.dev/'
+languageCode = 'en-uk'
+title = 'Lukas Kikuchi'
+theme = 'monospace-web-hugo-theme'
+summaryLength = 10
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params.social]
+  github = 'https://github.com/lukastk'
+  twitter = 'https://x.com/lukas_kikuchi'
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 3

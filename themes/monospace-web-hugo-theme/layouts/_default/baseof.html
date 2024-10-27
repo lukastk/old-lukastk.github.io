@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  <!-- Set the theme from localStorage if available. This avoids blinking on page load. -->
+  <script>
+    (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        updateToggleButtons();
+    })();
+  </script>
+
+  {{ partial "head.html" . }}
+  {{ partial "head/js.html" . }}
+</head>
+<body>
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+  {{ partial "head/js_footer.html" . }}
+</body>
+</html>
