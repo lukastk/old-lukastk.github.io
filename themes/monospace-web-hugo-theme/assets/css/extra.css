@@ -5,7 +5,39 @@
 
 [data-theme='dark'] {
     --a-hover-color: #27c200;
-  }
+}
+
+
+@media (max-width: 700px) {
+    .header tr {
+        display: block;
+    }
+    .header td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top:0;
+        border-left: 15px solid #fff !important;
+        border-right: var(--border-thickness) solid var(--text-color) !important;
+        padding: 
+            calc((var(--line-height) / 2))
+            calc(1ch - var(--border-thickness) / 2)
+            calc((var(--line-height) / 2) - (var(--border-thickness)))
+            !important;
+    }
+    .header td:not(:first-child) {
+        border-top: none;
+    }
+    .header tr td:last-child {
+        text-align: left;
+    }
+}
+
+.header-menu-icon a {
+    text-decoration: none;
+}
+
+
 
 b {
     font-weight: var(--font-weight-bold);
