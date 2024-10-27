@@ -4,9 +4,11 @@
   <!-- Set the theme from localStorage if available. This avoids blinking on page load. -->
   <script>
     (function() {
-        const theme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', theme);
-        updateToggleButtons();
+      const storedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      updateToggleButtons();
     })();
   </script>
 
