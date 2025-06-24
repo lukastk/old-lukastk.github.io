@@ -5,44 +5,100 @@ SCRIPT_PATH="$(realpath "${BASH_SOURCE[0]}")"
 SCRIPT_DIR="$(dirname "$SCRIPT_PATH")"
 source $SCRIPT_DIR/.env
 
-# Function to cleanup background processes on exit
+WEBSITE_VAULT_PATH="$OBSIDIAN_VAULT_PATH/$WEBSITE_REL_PATH"
+
+# Array to store background process PIDs
+declare -a BACKGROUND_PIDS=()
+
+# Function to cleanup background processes
 cleanup() {
-    echo "Shutting down..."
-    if [ ! -z "$QUARTZ_PID" ]; then
-        kill $QUARTZ_PID 2>/dev/null
-    fi
-    if [ ! -z "$RSYNC_PID" ]; then
-        kill $RSYNC_PID 2>/dev/null
-    fi
+    echo "Cleaning up background processes..."
+    for pid in "${BACKGROUND_PIDS[@]}"; do
+        if kill -0 "$pid" 2>/dev/null; then
+            echo "Killing process $pid"
+            kill "$pid" 2>/dev/null
+            # Give it a moment to terminate gracefully
+            sleep 2
+            # Force kill if still running
+            if kill -0 "$pid" 2>/dev/null; then
+                echo "Force killing process $pid"
+                kill -9 "$pid" 2>/dev/null
+            fi
+        fi
+    done
     exit 0
 }
 
-# Set up signal handlers to cleanup on exit
-trap cleanup SIGINT SIGTERM EXIT
+# Set up signal handlers for cleanup
+trap cleanup SIGTERM SIGINT EXIT
 
-# Initial sync
-echo "Performing initial content sync..."
-rsync -a --delete "${WEBSITE_VAULT_PATH%/}/" $SCRIPT_DIR/quartz/content/
+# Function to run rsync continuously
+run_rsync() {
+    while true; do
+        echo "Running rsync..."
+        sh sync_content.sh
+        if [ $? -eq 0 ]; then
+            echo "Rsync completed successfully"
+        else
+            echo "Rsync failed with exit code $?"
+        fi
+        sleep 2
+    done
+}
 
-# Start Quartz build server in background
-echo "Starting Quartz build server..."
-cd quartz
-npx quartz build --serve &
-QUARTZ_PID=$!
-cd ..
+# Function to start quartz server with auto-restart
+start_quartz_server() {
+    while true; do
+        echo "Starting Quartz server..."
+        cd "$SCRIPT_DIR/quartz" || {
+            echo "Failed to change to quartz directory"
+            sleep 10
+            continue
+        }
+        
+        npx quartz build --serve
+        exit_code=$?
+        
+        echo "Quartz server exited with code $exit_code"
+        if [ $exit_code -eq 0 ]; then
+            echo "Quartz server stopped normally"
+            break
+        else
+            echo "Quartz server crashed, restarting in 5 seconds..."
+            sleep 5
+        fi
+    done
+}
 
-# Start continuous rsync in background (sync every 2 seconds)
-echo "Starting continuous content sync..."
-while true; do
-    rsync -a --delete "${WEBSITE_VAULT_PATH%/}/" $SCRIPT_DIR/quartz/content/ >/dev/null 2>&1
-    sleep 1
-done &
+# Check if WEBSITE_VAULT_PATH is set
+if [ -z "$WEBSITE_VAULT_PATH" ]; then
+    echo "Error: WEBSITE_VAULT_PATH environment variable is not set"
+    exit 1
+fi
+
+# Check if quartz directory exists
+if [ ! -d "$SCRIPT_DIR/quartz" ]; then
+    echo "Error: quartz directory not found at $SCRIPT_DIR/quartz"
+    exit 1
+fi
+
+echo "Starting sync and serve processes..."
+echo "Script directory: $SCRIPT_DIR"
+echo "Website vault path: $WEBSITE_VAULT_PATH"
+
+# Start rsync in background
+run_rsync &
 RSYNC_PID=$!
+BACKGROUND_PIDS+=($RSYNC_PID)
+echo "Started rsync process with PID $RSYNC_PID"
 
-echo "Preview server running. Press Ctrl+C to stop."
-echo "Quartz server PID: $QUARTZ_PID"
-echo "Rsync process PID: $RSYNC_PID"
+# Start quartz server in background
+start_quartz_server &
+QUARTZ_PID=$!
+BACKGROUND_PIDS+=($QUARTZ_PID)
+echo "Started Quartz server process with PID $QUARTZ_PID"
 
-# Wait for background processes
+echo "Both processes started. Press Ctrl+C to stop."
+
+# Wait for any background process to finish
 wait
-
