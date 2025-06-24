@@ -1,8 +1,0 @@
-<figure>
-    <pre>{{ .Inner | safeHTML }}</pre>
-    {{ if .IsNamedParams }}
-        {{ with .Get "caption" }}
-            <figcaption>{{ . }}</figcaption>
-        {{ end }}
-    {{ end }}
-</figure>
