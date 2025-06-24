@@ -105,12 +105,13 @@ export default ((opts?: Partial<FolderContentOptions>) => {
 
     // Check if folder listing is disabled via frontmatter
     const showFolderListing = fileData.frontmatter?.["folder-listing"] !== false;
-    const folderListingTitle = fileData.frontmatter?.["folder-listing-title"] || i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
+    const folderListingTitleIsSet = fileData.frontmatter?.["folder-listing-title"] !== undefined;
+    const folderListingTitle = folderListingTitleIsSet ? fileData.frontmatter?.["folder-listing-title"] : i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
       count: allPagesInFolder.length,
     });
     let folderListingHeadingLevel = fileData.frontmatter?.["folder-listing-hlevel"];
     if (!folderListingHeadingLevel) {
-      folderListingHeadingLevel = fileData.frontmatter?.["folder-listing-title"] ? 2 : 0;
+      folderListingHeadingLevel = folderListingTitle ? 2 : 0;
     }
 
     return (
