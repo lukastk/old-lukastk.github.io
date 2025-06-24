@@ -268,3 +268,11 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
     overscroll-behavior: none;
   }
 }
+
+.explorer a:hover {
+  color: var(--tertiary);
+}
+
+.explorer .folder-button:hover .folder-title {
+  color: var(--tertiary);
+}
