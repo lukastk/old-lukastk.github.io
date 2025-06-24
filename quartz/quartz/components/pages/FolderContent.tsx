@@ -1,4 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
+import { h } from "preact"
 
 import style from "../styles/listPage.scss"
 import { PageList, SortFn } from "../PageList"
@@ -103,7 +104,14 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     ) as ComponentChildren
 
     // Check if folder listing is disabled via frontmatter
-    const showFolderListing = fileData.frontmatter?.["folder-listing"] !== false
+    const showFolderListing = fileData.frontmatter?.["folder-listing"] !== false;
+    const folderListingTitle = fileData.frontmatter?.["folder-listing-title"] || i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
+      count: allPagesInFolder.length,
+    });
+    let folderListingHeadingLevel = fileData.frontmatter?.["folder-listing-hlevel"];
+    if (!folderListingHeadingLevel) {
+      folderListingHeadingLevel = fileData.frontmatter?.["folder-listing-title"] ? 2 : 0;
+    }
 
     return (
       <div class="popover-hint">
@@ -111,11 +119,13 @@ export default ((opts?: Partial<FolderContentOptions>) => {
         {showFolderListing && (
           <div class="page-listing">
             {options.showFolderCount && (
-              <p>
-                {i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
-                  count: allPagesInFolder.length,
-                })}
-              </p>
+              folderListingHeadingLevel === 0 ? (
+                <p>
+                  {folderListingTitle}
+                </p>
+              ) : (
+                h(`h${folderListingHeadingLevel}`, null, folderListingTitle)
+              )
             )}
             <div>
               <PageList {...listProps} />
