@@ -1,5 +1,9 @@
 @use "../../styles/variables.scss" as *;
 
+// Define the font size variable
+$explorer-font-size: 1rem;
+$explorer-item-sep: 0.6rem;
+
 @media all and ($mobile) {
   .page > #quartz-body {
     // Shift page position when toggling Explorer on mobile.
@@ -120,14 +124,26 @@ button.desktop-explorer {
     padding: 0;
     overscroll-behavior: contain;
 
-    & li > a {
-      color: var(--dark);
-      opacity: 0.75;
-      pointer-events: all;
+    & li {
+      & > a {
+        color: var(--dark);
+        opacity: 0.75;
+        pointer-events: all;
+        font-size: $explorer-font-size;
 
-      &.active {
-        opacity: 1;
-        color: var(--tertiary);
+        &.active {
+          opacity: 1;
+          color: var(--tertiary);
+        }
+      }
+      
+      /* Add a between to folder items */
+      &:has(> a) {
+        margin-bottom: $explorer-item-sep;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -159,7 +175,7 @@ button.desktop-explorer {
   & div > a {
     color: var(--secondary);
     font-family: var(--headerFont);
-    font-size: 0.95rem;
+    font-size: $explorer-font-size;
     font-weight: $semiBoldWeight;
     line-height: 1.5rem;
     display: inline-block;
@@ -182,7 +198,7 @@ button.desktop-explorer {
     font-family: var(--headerFont);
 
     & span {
-      font-size: 0.95rem;
+      font-size: $explorer-font-size;
       display: inline-block;
       color: var(--secondary);
       font-weight: $semiBoldWeight;
