@@ -269,10 +269,17 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
   }
 }
 
+/* Hover events */
+
 .explorer a:hover {
   color: var(--tertiary);
 }
 
 .explorer .folder-button:hover .folder-title {
   color: var(--tertiary);
+}
+
+.explorer .folder-icon:hover {
+  color: var(--tertiary);
+  stroke-width: 3; 
 }
